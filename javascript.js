@@ -50,6 +50,7 @@ function clearDisplay() {
     operator = "";
     secondNumber = "";
     isSecondNumber = false;
+    decimalButton.disabled = false;
     updateDisplay("");
 }
 
@@ -64,6 +65,9 @@ function deleteLast() {
     } else if (firstNumber !== "") {
         firstNumber = firstNumber.slice(0, -1);
         updateDisplay(firstNumber);
+    }
+    if (!firstNumber.includes(".") && !secondNumber.includes(".")) {
+        decimalButton.disabled = false;
     }
 }
 
@@ -82,12 +86,30 @@ function appendOperator(op) {
     if (!isSecondNumber) {
         operator = op;
         isSecondNumber = true;
+        decimalButton.disabled = false;
         updateDisplay(firstNumber + operator);
     } else if (secondNumber !== "") {
         calculate();
         operator = op;
         isSecondNumber = true,
+        decimalButton.disabled = false;
         updateDisplay(firstNumber + operator);
+    }
+}
+
+function appendDecimal() {
+    if (!isSecondNumber) {
+        if (!firstNumber.includes(".")) {
+            firstNumber += ".";
+            updateDisplay(firstNumber);
+            decimalButton.disabled = true;
+        }
+    } else {
+        if (!secondNumber.includes(".")) {
+            secondNumber += ".";
+            updateDisplay(firstNumber + operator + secondNumber);
+            decimalButton.disabled = true;
+        }
     }
 }
 
@@ -105,6 +127,7 @@ function calculate() {
     operator = "";
     secondNumber = "";
     isSecondNumber = false;
+    decimalButton.disabled = firstNumber.includes(".");
     updateDisplay(firstNumber);
  }
 }
