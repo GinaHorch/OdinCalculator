@@ -17,3 +17,13 @@ body {
     background-color: #fff;
     padding: 10px;
 }
+
+#display {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+    font-size: 1.5em;
+}
