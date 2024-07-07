@@ -49,3 +49,17 @@ function clearDisplay() {
     isSecondNumber = false;
     updateDisplay("");
 }
+
+function deleteLast() {
+    if (isSecondNumber && secondNumber !== "") {
+        secondNumber = secondNumber.slice(0, -1);
+        updateDisplay(firstNumber + operator + secondNumber);
+    } else if (operator !== "") {
+        operator = "";
+        isSecondNumber = false;
+        updateDisplay(firstNumber);
+    } else if (firstNumber !== "") {
+        firstNumber = firstNumber.slice(0, -1);
+        updateDisplay(firstNumber);
+    }
+}
