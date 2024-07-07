@@ -4,6 +4,7 @@ let secondNumber = '';
 let isSecondNumber = false;
 
 const displayElement = document.querySelector("#display");
+const decimalButton = document.querySelector("#decimal");
 
 const add = function(a, b) {
     return a + b;
