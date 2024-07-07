@@ -63,3 +63,27 @@ function deleteLast() {
         updateDisplay(firstNumber);
     }
 }
+
+function appendNumber(number) {
+    if (!isSecondNumber) {
+        firstNumber += number;
+        updateDisplay(firstNumber);
+    } else {
+        secondNumber += number;
+        updateDisplay(firstNumber + operator + secondNumber);
+    }
+}
+
+function appendOperator(op) {
+    if (firstNumber === "") return;
+    if (!isSecondNumber) {
+        operator = op;
+        isSecondNumber = true;
+        updateDisplay(firstNumber + operator);
+    } else if (secondNumber !== "") {
+        calculate();
+        operator = op;
+        isSecondNumber = true,
+        updateDisplay(firstNumber + operator);
+    }
+}
