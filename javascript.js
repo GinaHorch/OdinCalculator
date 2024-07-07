@@ -132,3 +132,21 @@ function calculate() {
     updateDisplay(firstNumber);
  }
 }
+
+document.addEventListener("keydown", function(event) {
+    const key = event.key;
+    console.log("Key pressed", key);
+    if (/[0-9]/.test(key)) {
+        appendNumber(parseInt(key));
+    } else if (key === "+" || key === "-" || key === "*" || key === "/") {
+        appendOperator(key);
+    } else if (key === "." || key === ",") {
+        appendDecimal();
+    } else if (key === "Enter" || key === "=") {
+        calculate();
+    } else if (key === "Backspace" || key === "Delete") {
+        deleteLast();
+    } else if (key === "Escape") {
+        clearDisplay();
+    }
+});
