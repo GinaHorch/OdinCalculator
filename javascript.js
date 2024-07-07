@@ -96,10 +96,15 @@ function calculate() {
     const num1 = parseFloat(firstNumber);
     const num2 = parseFloat(secondNumber);
     let result = operate(operator, num1, num2);
+    if (result === "Error: Division by zero") {
+        updateDisplay(result);
+        setTimeout(clearDisplay, 2000);
+    } else {
     result = roundResult(result);
     firstNumber = result.toString();
     operator = "";
     secondNumber = "";
     isSecondNumber = false;
     updateDisplay(firstNumber);
+ }
 }
