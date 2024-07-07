@@ -1,6 +1,9 @@
 let firstNumber = '';
 let operator = '';
 let secondNumber = '';
+let isSecondNumber = false;
+
+const displayElement = document.querySelector("#display");
 
 const add = function(a, b) {
     return a + b;
@@ -34,4 +37,15 @@ const operate = function(operator, a, b) {
         default:
             return null;
     }
+}
+function updateDisplay(value) {
+    displayElement.value = value;
+}
+
+function clearDisplay() {
+    firstNumber = "";
+    operator = "";
+    secondNumber = "";
+    isSecondNumber = false;
+    updateDisplay("");
 }
