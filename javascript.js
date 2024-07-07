@@ -23,6 +23,9 @@ const divide = function(a, b) {
     }
     return a / b;
 }
+const roundResult = function(result, decimalPlaces = 5) {
+    return parseFloat(result.toFixed(decimalPlaces));
+}
 
 const operate = function(operator, a, b) {
     switch (operator) {
@@ -92,7 +95,8 @@ function calculate() {
     if (firstNumber === "" || operator === "" || secondNumber === "") return;
     const num1 = parseFloat(firstNumber);
     const num2 = parseFloat(secondNumber);
-    const result = operate(operator, num1, num2);
+    let result = operate(operator, num1, num2);
+    result = roundResult(result);
     firstNumber = result.toString();
     operator = "";
     secondNumber = "";
