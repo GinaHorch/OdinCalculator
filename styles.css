@@ -52,7 +52,7 @@ button {
     border-radius: 5px;
     background-color: #e0e0e0;
     cursor: pointer;
-    transform: background-color 0.3s;
+    transition: background-color 0.3s ease;
     color: #333;
 }
 
@@ -60,7 +60,7 @@ button:hover {
     background-color: #d0d0d0;
 }
 
-button.zero {
+.zero {
     grid-column: span 2;
 }
 
@@ -70,6 +70,22 @@ button.zero {
 }
 
 .operator {
+    background-color: #f0ad4e;
+    color: #ffffff;
+}
+
+.equals {
+    background-color: #5cb85c;
+    color: #ffffff;
+    grid-column: span 2;
+}
+
+.clear {
+    background-color: #d9534f;
+    color: #ffffff;
+}
+
+.delete {
     background-color: #f0ad4e;
     color: #ffffff;
 }
