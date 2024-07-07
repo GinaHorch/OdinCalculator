@@ -136,7 +136,7 @@ function calculate() {
 document.addEventListener("keydown", function(event) {
     const key = event.key;
     console.log("Key pressed", key);
-    if (/[0-9]/.test(key)) {
+    if (/^[0-9]$/.test(key)) {
         appendNumber(parseInt(key));
     } else if (key === "+" || key === "-" || key === "*" || key === "/") {
         appendOperator(key);
