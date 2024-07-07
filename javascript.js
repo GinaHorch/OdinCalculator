@@ -87,3 +87,15 @@ function appendOperator(op) {
         updateDisplay(firstNumber + operator);
     }
 }
+
+function calculate() {
+    if (firstNumber === "" || operator === "" || secondNumber === "") return;
+    const num1 = parseFloat(firstNumber);
+    const num2 = parseFloat(secondNumber);
+    const result = operate(operator, num1, num2);
+    firstNumber = result.toString();
+    operator = "";
+    secondNumber = "";
+    isSecondNumber = false;
+    updateDisplay(firstNumber);
+}
